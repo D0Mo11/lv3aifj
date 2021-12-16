@@ -12,6 +12,18 @@ namespace lv3jezik
         char separators = ' ';
         char[] operators = { '+', '-', '*', '/', '=', '#' };
         char comment = '!';
+
+        List<VariableData> variables;
+        //TODO
+        /*
+         * 1 ukloniti separatore ako se pojavljuju između identifikatora ("c ab b" --> "cabb")
+         * 2 pobrojati varijable i spremiti u listu, metoda CountVariables()
+         * 3 napraviti metodu CheckForVariable(String variable) koja prolazi kroz listu i vraća je li pronašla varijablu iz argumenta
+         */
+        public Parser()
+        {
+            this.variables = new List<VariableData>();
+        }
         public List<char> ReturnValidElements(String input)
         {
             List<char> tempList = new List<char>();
@@ -69,6 +81,50 @@ namespace lv3jezik
             foreach(char c in list)
                 Console.WriteLine(GetCharTypes(c));
         }
+        public void CountVariables(List<char> expression)
+        {
+            bool foundMatch = false;
+            List<char> currentVariable;
 
+            for(int i = 0; i < expression.Count;)
+            {
+                if (identificators.Contains(expression[i]))
+                {
+                    currentVariable = new List<char>();
+                    currentVariable.Add(expression[i]);
+
+                    int j = 1;
+
+                    while (identificators.Contains(expression[i+j])) {
+                        currentVariable.Add(expression[i + j]);
+                        j++;
+                    }
+                    //TODO
+                    /*
+                     * 4 extract string from currentVariable list
+                     * 5 make new method to check if variable has already been used
+                     * 6 save result in foundMatch
+                     * 7 if(!foundMatch) -> create new VariableData class with currentVariable and add it to the variables list
+                     */
+                    i += j;
+                }
+                else i++;
+            }
+        }
+    }
+
+    class VariableData
+    {
+        string variable;
+        int repetitionCount;
+        public VariableData(String variable)
+        {
+            this.variable = variable;
+            repetitionCount = 0;
+        }
+        public void IncrementRepetition()
+        {
+            this.repetitionCount++;
+        }
     }
 }

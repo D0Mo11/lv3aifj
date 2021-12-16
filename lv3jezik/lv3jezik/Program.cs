@@ -21,6 +21,7 @@ namespace lv3jezik
             validElements2 = parser.RemoveMultipleOperators(validElements);
             Console.Write("Removed concatenated operators: ");
             Console.WriteLine(validElements2.ToArray());
+
             parser.ListCharTypes(validElements2);
 
             Console.ReadLine();
