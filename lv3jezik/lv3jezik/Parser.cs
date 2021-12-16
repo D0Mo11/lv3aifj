@@ -102,7 +102,7 @@ namespace lv3jezik
                     //TODO
                     /*
                      * 4 extract string from currentVariable list
-                     * 5 make new method to check if variable has already been used
+                     * 5 make new method CheckForVariable(String variable) to check if variable has already been used
                      * 6 save result in foundMatch
                      * 7 if(!foundMatch) -> create new VariableData class with currentVariable and add it to the variables list
                      */
@@ -122,6 +122,7 @@ namespace lv3jezik
             this.variable = variable;
             repetitionCount = 0;
         }
+        public string GetVariable() => this.variable;
         public void IncrementRepetition()
         {
             this.repetitionCount++;
