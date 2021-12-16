@@ -12,7 +12,7 @@ namespace lv3jezik
         char separators = ' ';
         char[] operators = { '+', '-', '*', '/', '=' };
         char comment = '!';
-        public List<char> returnValidElements(String input)
+        public List<char> ReturnValidElements(String input)
         {
             List<char> tempList = new List<char>();
             foreach (char c in input)
@@ -24,9 +24,8 @@ namespace lv3jezik
             }
             return tempList;
         }
-
         //ova metoda odmah napravi konacni izraz
-        public List<char> removeMultipleOperators(List<char> list)
+        public List<char> RemoveMultipleOperators(List<char> list)
         {
             List<char> tempList = new List<char>();
             List<char> input = new List<char>(list);
@@ -52,35 +51,25 @@ namespace lv3jezik
             }
             return tempList;
         }
-
-        public string getCharTypes(char c)
+        public string GetCharTypes(char c)
         {
             if (operators.Contains(c))
-            {
-                return ("("+c + ", operator)\n");
-            }
+                return ("("+c + ", operator)");
 
             else if (identificators.Contains(c))
-            {
-                return ("(" + c + ", identificator)\n");
-            }
+                return ("(" + c + ", identificator)");
 
             else if (separators == c)
-            {
-                return ("(" + c + ", separator)\n");
-            }
+                return ("(" + c + ", separator)");
 
             else 
-            {
-                return ("(" + c + ", comment)\n");
-            }
+                return ("(" + c + ", comment)");
         }
-
-        public void func(List<char> list)
+        public void ListCharTypes(List<char> list)
         {
             foreach(char c in list)
             {
-                Console.WriteLine(getCharTypes(c));
+                Console.WriteLine(GetCharTypes(c));
             }
         }
 

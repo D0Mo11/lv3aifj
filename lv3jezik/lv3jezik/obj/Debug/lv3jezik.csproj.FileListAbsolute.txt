@@ -5,3 +5,10 @@ C:\Users\student\source\repos\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.CoreCo
 C:\Users\student\source\repos\lv3jezik\lv3jezik\obj\Debug\lv3jezik.exe
 C:\Users\student\source\repos\lv3jezik\lv3jezik\obj\Debug\lv3jezik.pdb
 C:\Users\student\source\repos\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csprojAssemblyReference.cache
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\bin\Debug\lv3jezik.exe.config
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\bin\Debug\lv3jezik.exe
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\bin\Debug\lv3jezik.pdb
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.AssemblyReference.cache
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.CoreCompileInputs.cache
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.exe
+D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.pdb
