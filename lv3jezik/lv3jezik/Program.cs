@@ -14,9 +14,12 @@ namespace lv3jezik
             List<char> validElements = new List<char>();
             List<char> validElements2 = new List<char>();
 
-            validElements = parser.ReturnValidElements("abbb++++. ..... .c1njd=a!");
+            validElements = parser.ReturnValidElements("abbb++++. ..... .c1njd=a##!");
+            Console.Write("Input: ");
             Console.WriteLine(validElements.ToArray());
+
             validElements2 = parser.RemoveMultipleOperators(validElements);
+            Console.Write("Removed concatenated operators: ");
             Console.WriteLine(validElements2.ToArray());
             parser.ListCharTypes(validElements2);
 

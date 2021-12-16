@@ -10,7 +10,7 @@ namespace lv3jezik
     {
         char[] identificators = { 'a', 'b', 'c', 'd', 'e', 'A', 'B', 'C', 'D', 'E' };
         char separators = ' ';
-        char[] operators = { '+', '-', '*', '/', '=' };
+        char[] operators = { '+', '-', '*', '/', '=', '#' };
         char comment = '!';
         public List<char> ReturnValidElements(String input)
         {
@@ -28,7 +28,6 @@ namespace lv3jezik
         public List<char> RemoveMultipleOperators(List<char> list)
         {
             List<char> tempList = new List<char>();
-            List<char> input = new List<char>(list);
             int i;
 
             for (i = 0; i < list.Count();)
@@ -54,7 +53,7 @@ namespace lv3jezik
         public string GetCharTypes(char c)
         {
             if (operators.Contains(c))
-                return ("("+c + ", operator)");
+                return ("(" + c + ", operator)");
 
             else if (identificators.Contains(c))
                 return ("(" + c + ", identificator)");
@@ -62,15 +61,13 @@ namespace lv3jezik
             else if (separators == c)
                 return ("(" + c + ", separator)");
 
-            else 
+            else
                 return ("(" + c + ", comment)");
         }
         public void ListCharTypes(List<char> list)
         {
             foreach(char c in list)
-            {
                 Console.WriteLine(GetCharTypes(c));
-            }
         }
 
     }
