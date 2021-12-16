@@ -9,9 +9,15 @@ namespace lv3jezik
     class Parser
     {
         char[] identificators = { 'a', 'b', 'c', 'd', 'e', 'A', 'B', 'C', 'D', 'E' };
-        char separators = ' ';
+        char separator = ' ';
         char[] operators = { '+', '-', '*', '/', '=', '#' };
         char comment = '!';
+
+        /*
+         * IMPORTANT TO DO: u slučaju pojave normalnog operatora i endline operatora '#', endline se neće pojaviti
+         * jer će ga promatrati kao ulančavanje opet. Potrebno popraviti to, možda najbolje novom varijablom endline
+         * poput trenutnih separator i comment. Imati u vidu popraviti i sve što ta izmjena povlači za sobom
+         */
 
         List<VariableData> variables;
         //TODO
@@ -19,6 +25,7 @@ namespace lv3jezik
          * 1 ukloniti separatore ako se pojavljuju između identifikatora ("c ab b" --> "cabb")
          * 2 pobrojati varijable i spremiti u listu, metoda CountVariables()
          * 3 napraviti metodu CheckForVariable(String variable) koja prolazi kroz listu i vraća je li pronašla varijablu iz argumenta
+         * 4 možda: ukloniti višestruki separator, da bude maksimalno 1 razmak a ne      6 njih u ispisu
          */
         public Parser()
         {
@@ -29,7 +36,7 @@ namespace lv3jezik
             List<char> tempList = new List<char>();
             foreach (char c in input)
             {
-                if (identificators.Contains(c) || separators == c || operators.Contains(c) || comment == c)
+                if (identificators.Contains(c) || separator == c || operators.Contains(c) || comment == c)
                 {
                     tempList.Add(c);
                 }
@@ -70,7 +77,7 @@ namespace lv3jezik
             else if (identificators.Contains(c))
                 return ("(" + c + ", identificator)");
 
-            else if (separators == c)
+            else if (separator == c)
                 return ("(" + c + ", separator)");
 
             else
@@ -101,10 +108,10 @@ namespace lv3jezik
                     }
                     //TODO
                     /*
-                     * 4 extract string from currentVariable list
-                     * 5 make new method CheckForVariable(String variable) to check if variable has already been used
-                     * 6 save result in foundMatch
-                     * 7 if(!foundMatch) -> create new VariableData class with currentVariable and add it to the variables list
+                     * 5 extract string from currentVariable list
+                     * 6 make new method CheckForVariable(String variable) to check if variable has already been used
+                     * 7 save result in foundMatch
+                     * 8 if(!foundMatch) -> create new VariableData class with currentVariable and add it to the variables list
                      */
                     i += j;
                 }
