@@ -36,7 +36,7 @@ namespace lv3jezik
             List<char> tempList = new List<char>();
             foreach (char c in input)
             {
-                if (identificators.Contains(c) || separator == c || operators.Contains(c) || comment == c)
+                if (identificators.Contains(c)  || operators.Contains(c) || comment == c)
                 {
                     tempList.Add(c);
                 }

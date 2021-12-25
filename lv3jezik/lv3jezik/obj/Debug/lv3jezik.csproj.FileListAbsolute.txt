@@ -12,3 +12,10 @@ D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debu
 D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.CoreCompileInputs.cache
 D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.exe
 D:\User\Downloads\Faks Materijali\7Automati\LV3 - Git\lv3jezik\lv3jezik\obj\Debug\lv3jezik.pdb
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\bin\Debug\lv3jezik.exe.config
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\bin\Debug\lv3jezik.exe
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\bin\Debug\lv3jezik.pdb
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.AssemblyReference.cache
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.CoreCompileInputs.cache
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.exe
+C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.pdb
