@@ -36,7 +36,7 @@ namespace lv3jezik
             List<char> tempList = new List<char>();
             foreach (char c in input)
             {
-                if (identificators.Contains(c)  || operators.Contains(c) || comment == c)
+                if (identificators.Contains(c) || operators.Contains(c) || comment == c)
                 {
                     tempList.Add(c);
                 }
@@ -85,54 +85,118 @@ namespace lv3jezik
         }
         public void ListCharTypes(List<char> list)
         {
-            foreach(char c in list)
+            foreach (char c in list)
                 Console.WriteLine(GetCharTypes(c));
         }
+
         public void CountVariables(List<char> expression)
         {
-            bool foundMatch = false;
-            List<char> currentVariable;
 
-            for(int i = 0; i < expression.Count;)
+            bool foundMatch;
+            List<char> currentVariable = new List<char>();
+
+            for (int i = 0; i < expression.Count; i++)
             {
-                if (identificators.Contains(expression[i]))
+                foundMatch = false;
+                foreach (VariableData variable in variables)
                 {
-                    currentVariable = new List<char>();
-                    currentVariable.Add(expression[i]);
-
-                    int j = 1;
-
-                    while (identificators.Contains(expression[i+j])) {
-                        currentVariable.Add(expression[i + j]);
-                        j++;
+                    if (variable.GetVariable() == expression[i])
+                    {
+                        variable.IncrementRepetition();
+                        foundMatch = true;
+                        break;
                     }
-                    //TODO
-                    /*
-                     * 5 extract string from currentVariable list
-                     * 6 make new method CheckForVariable(String variable) to check if variable has already been used
-                     * 7 save result in foundMatch
-                     * 8 if(!foundMatch) -> create new VariableData class with currentVariable and add it to the variables list
-                     */
-                    i += j;
                 }
-                else i++;
-            }
-        }
-    }
+                if (!foundMatch)
+                {
+                    VariableData temp = new VariableData(expression[i]);
+                    variables.Add(temp);
+                }
 
-    class VariableData
-    {
-        string variable;
-        int repetitionCount;
-        public VariableData(String variable)
-        {
-            this.variable = variable;
-            repetitionCount = 0;
+            }
+
+            
         }
-        public string GetVariable() => this.variable;
-        public void IncrementRepetition()
+        public string ConstructOutputString(List<char> expression)
         {
-            this.repetitionCount++;
+            int identificatorCount = 0;
+            int operatorCount = 0;
+            int commentCount = 0;
+
+            string temp = "";
+
+            foreach(VariableData var in variables)
+            {
+                if (identificators.Contains(var.GetVariable()))
+                {
+                    identificatorCount++;
+                }
+                else if(operators.Contains(var.GetVariable()))
+                {
+                    operatorCount++;
+                }
+                else if (var.GetVariable() == comment)
+                {
+                    commentCount++;
+                }
+            }
+            StringBuilder builder = new StringBuilder();
+
+            int i = 0;
+
+            builder.Append("\nidentificators [" + identificatorCount + "]: ");
+            foreach (VariableData var in variables)
+            {
+                if (identificators.Contains(var.GetVariable()))
+                {
+                    builder.Append("'" + variables[i].GetVariable() + "'[" + variables[i].GetRepetitionCount() + "] ");
+                    
+                }
+                i++;
+            }
+            i = 0;
+            builder.Append("\noperators [" + operatorCount + "]: ");
+            foreach (VariableData var in variables)
+            {
+                if (operators.Contains(var.GetVariable()))
+                {
+                    builder.Append("'" + variables[i].GetVariable() + "'[" + variables[i].GetRepetitionCount() + "] ");
+                    
+                }
+                i++;
+            }
+
+            i = 0;
+            builder.Append("\ncomments [" + commentCount + "]: ");
+            foreach (VariableData var in variables)
+            {
+                if (comment == var.GetVariable())
+                {
+                    builder.Append("'" + variables[i].GetVariable() + "'[" + variables[i].GetRepetitionCount() + "] ");
+
+                }
+                i++;
+            }
+
+            return builder.ToString();
+        }
+
+        class VariableData
+        {
+            char variable;
+            int repetitionCount;
+            public VariableData(char variable)
+            {
+                this.variable = variable;
+                repetitionCount = 1;
+            }
+            public char GetVariable() => this.variable;
+            public int GetRepetitionCount() => this.repetitionCount;
+            public void IncrementRepetition()
+            {
+                this.repetitionCount++;
+            }
+
         }
     }
 }

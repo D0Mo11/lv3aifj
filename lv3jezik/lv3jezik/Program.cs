@@ -23,7 +23,9 @@ namespace lv3jezik
             Console.WriteLine(validElements2.ToArray());
 
             parser.ListCharTypes(validElements2);
+            parser.CountVariables(validElements2);
 
+            Console.WriteLine(parser.ConstructOutputString(validElements2));
             Console.ReadLine();
         }
 
