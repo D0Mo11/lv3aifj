@@ -19,3 +19,10 @@ C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\D
 C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.CoreCompileInputs.cache
 C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.exe
 C:\Users\Domagoj\Desktop\FERIT\4. Godina\AFJ\LV3\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.pdb
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\bin\Debug\lv3jezik.exe.config
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\bin\Debug\lv3jezik.exe
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\bin\Debug\lv3jezik.pdb
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csprojAssemblyReference.cache
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.exe
+C:\Users\Korisnik\Desktop\lv3aifj\lv3jezik\lv3jezik\obj\Debug\lv3jezik.pdb

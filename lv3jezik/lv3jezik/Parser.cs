@@ -10,21 +10,13 @@ namespace lv3jezik
     {
         char[] identificators = { 'a', 'b', 'c', 'd', 'e', 'A', 'B', 'C', 'D', 'E' };
         char separator = ' ';
-        char[] operators = { '+', '-', '*', '/', '=', '#' };
+        char[] operators = { '+', '-', '*', '/', '=', '#'};
         char comment = '!';
-
-        /*
-         * IMPORTANT TO DO: u slučaju pojave normalnog operatora i endline operatora '#', endline se neće pojaviti
-         * jer će ga promatrati kao ulančavanje opet. Potrebno popraviti to, možda najbolje novom varijablom endline
-         * poput trenutnih separator i comment. Imati u vidu popraviti i sve što ta izmjena povlači za sobom
-         */
 
         List<VariableData> variables;
         //TODO
         /*
          * 1 ukloniti separatore ako se pojavljuju između identifikatora ("c ab b" --> "cabb")
-         * 2 pobrojati varijable i spremiti u listu, metoda CountVariables()
-         * 3 napraviti metodu CheckForVariable(String variable) koja prolazi kroz listu i vraća je li pronašla varijablu iz argumenta
          * 4 možda: ukloniti višestruki separator, da bude maksimalno 1 razmak a ne      6 njih u ispisu
          */
         public Parser()
@@ -38,16 +30,18 @@ namespace lv3jezik
             {
                 if (identificators.Contains(c) || operators.Contains(c) || comment == c)
                 {
+                   
                     tempList.Add(c);
                 }
             }
             return tempList;
         }
-        //ova metoda odmah napravi konacni izraz
         public List<char> RemoveMultipleOperators(List<char> list)
         {
             List<char> tempList = new List<char>();
             int i;
+            int index;
+            int count;
 
             for (i = 0; i < list.Count();)
             {
@@ -57,7 +51,7 @@ namespace lv3jezik
                     i++;
                 }
                 else
-                {
+                {   
                     int j = 1;
                     tempList.Add(list[i]);
                     while (operators.Contains(list[i + j]))
@@ -67,8 +61,23 @@ namespace lv3jezik
                     i += j;
                 }
             }
+            
             return tempList;
         }
+
+        public List<char> getFinalExpression(List<char> list)
+        {
+            List<char> tempList = new List<char>(list);
+            int index;
+            int count;
+            int range;
+            count = list.Count();
+            index = list.IndexOf('#');
+            range = count - index;
+            tempList.RemoveRange(index, range);
+            return tempList;
+        }
+
         public string GetCharTypes(char c)
         {
             if (operators.Contains(c))
